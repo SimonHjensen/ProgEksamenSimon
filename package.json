@@ -1,0 +1,26 @@
+{
+  "name": "ProgEksamen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonHjensen/ProgEksamenSimon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimonHjensen/ProgEksamenSimon/issues"
+  },
+  "homepage": "https://github.com/SimonHjensen/ProgEksamenSimon#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
