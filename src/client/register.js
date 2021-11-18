@@ -1,4 +1,3 @@
-const { METHODS } = require("http");
 
 document.addEventListener("DOMContentLoaded", (event) =>{
     document.getElementById("submitForm").addEventListener("submit", () => {
@@ -8,8 +7,8 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         const password = document.getElementById("password").value
 
         const user = {
-            "email": email,
-            "password": password
+            email: email,
+            password: password
         }
 
         fetch("http://localhost:3000/users/create", {

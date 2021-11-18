@@ -1,5 +1,5 @@
 {
-  "name": "ProgEksamen",
+  "name": "progeksamen",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,5 +22,6 @@
   "homepage": "https://github.com/SimonHjensen/ProgEksamenSimon#readme",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {}
 }

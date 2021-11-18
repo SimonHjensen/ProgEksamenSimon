@@ -1,25 +1,25 @@
-const fs = require("fs");
+var fs = require("fs");
 
-const PATH = __dirname + "../../database" // Kan ændre i de to konstanter her for at redefinere filstien til min users database
+const PATH = __dirname + "/../../database" // Kan ændre i de to konstanter her for at redefinere filstien til min users database
 const USER_FILE = "/users.json"
 
 class DB {
     constructor() {
-        this.users = this.openFile();
+        this.users = this.openFile(USER_FILE);
     }
 
-    saveFile() { // Funktion der kan skrive i users.json fil
-        fs.writeFileSync(PATH + USER_FILE, this.users);
+    saveFile(fileName, contentString) { // Funktion der kan skrive i users.json fil
+        fs.writeFileSync(PATH + fileName, contentString);
     }
 
-    openFile() { // Funktion der kan åbne og returnere vores users.json fil
-        const file = fs.readFileSync(PATH + USER_FILE);
+    openFile(fileName) { // Funktion der kan åbne og returnere vores users.json fil
+        const file = fs.readFileSync(PATH + fileName);
         return JSON.parse(file);
     }
 
-    saveUser(user) {
+    saveUser(user) { // Login
         this.users.push(user);
-        this.saveFile();
+        this.saveFile(USER_FILE, JSON.stringify(this.users));
     }
 
     findUser(user) {
@@ -27,7 +27,6 @@ class DB {
     }
 }
 
-console.log(new DB().openFile())
 
 module.exports = new DB();
 
