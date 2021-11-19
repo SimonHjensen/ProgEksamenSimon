@@ -25,6 +25,12 @@ class DB {
     findUser(user) {
         return this.users.find((x) => user.email == x.email);
     }
+
+    deleteUser(user) {
+        this.users = this.users.filter((x) => x.email != user.email);
+        this.saveFile(USER_FILE, JSON.stringify(this.users));
+      }
+    
 }
 
 
