@@ -29,5 +29,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
     });
+
+    document.getElementById("logoutUser").addEventListener("submit", (event) => {
+      event.preventDefault();
+  
+      if (user) {
+        localStorage.removeItem("user");
+        location.href = "/login.html";
+      };
+    });
+
   });
+
+
   
