@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", (event) =>{
     document.getElementById("submitForm").addEventListener("submit", () => {
         event.preventDefault();

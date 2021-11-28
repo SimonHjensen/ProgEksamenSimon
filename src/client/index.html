@@ -1,10 +1,17 @@
 <html>
   <head>
+    <meta charset="utf-8"> 
     <script src="index.js"></script>
+    <link rel="stylesheet" href="./Styling/createLot.css">
+
   </head>
   <body>
-      
+
     <h1>Nu spiller det</h1>
+
+    <a href="http://localhost:3000/lots.html">
+      <button>Gå til annoncer</button>
+    </a>
     
     <form id="deleteUser">
 
@@ -17,5 +24,24 @@
       <input value="Logout" type="submit" />
 
     </form>
+
+    <form id="createLot"> 
+
+      <input id="name" type="text" placeholder="Indtast dit navn her">
+      <input id="tlf" type="text" placeholder="Indtast dit telefonnumer her" >
+      <input id="city" type="text" placeholder="By">
+      <input id="category" type="text" placeholder="Kategori">
+      <input id="good" type="text" placeholder = "Skriv hvad du sælger her">
+      <!-- <input id="image" type="image" placeholder="Dit billede her"> -->
+      <input id="price" type="text" placeholder="Pris">
+      <input id="description" type="text" placeholder="Beskriv hvad du sælger">
+      <input value="Opret annonce" type="submit">
+
+    </form>
+   
+    <script src="./createLot.js" async defer></script>
+
   </body>
 </html>
+
+
