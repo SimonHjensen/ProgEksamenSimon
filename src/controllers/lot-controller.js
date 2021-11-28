@@ -19,6 +19,12 @@ router.delete("/delete", (req, res) => {
     res.status(200).send(true)
 });
 
-    
+router.get("get", (req, res =>{
+    const lot = new Lot(req.body.name, req.body.tlf, req.body.city, req.body.category, req.body.good, req.body.image, req.body.description);
+    db.openFile(lot);
+    res.status(200).send(true)
+
+
+}))
 
 module.exports = router;
