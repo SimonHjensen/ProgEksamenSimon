@@ -2,9 +2,11 @@ document.getElementById("showLot").addEventListener("click", async () => {
 
     let table = document.getElementById("lotList");
 
-    let result = await fetch("http://localhost:3000/lots/create", {method: 'GET'})
+    let result = await fetch("http://localhost:3000/lots/get", {method: 'GET'})
         .then(res => res.json())
         .catch(error => console.log(error));
+
+    
 
 
     let tableHtml = `
@@ -20,17 +22,27 @@ document.getElementById("showLot").addEventListener("click", async () => {
 
     </tr>
     `;
-    for(const name in result){
+            
 
-        tableHtml += `
-        <tr> 
-        <td> ${name} </td>
-        <td> ${result[name]} </td>
-    </tr>
+    for(let i = 0; i < result.length; i++){
+        console.log(result[i])
         
+        tableHtml += `
+        <tr>
+            
+            <td> ${result[i].name}</td>
+            <td> ${result[i].tlf}</td>
+            <td> ${result[i].city}</td>
+            <td> ${result[i].category}</td>
+            <td> ${result[i].good}</td>
+            <td> ${result[i].price}</td>
+            <td> ${result[i].description}</td>
+        </tr>
         `;
+        
 
-    }
+    };
 
     table.innerHTML = tableHtml;
 });
+

@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", (event) =>{
-    document.getElementById("createLot").addEventListener("submit", () => {
+
+    document.getElementById("createLot").addEventListener("submit", (event) => {
+
         event.preventDefault();
 
         const name = document.getElementById("name").value
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         .then((response) => response.json())
         .then((response) => {
             if (response) {
-                location.href = "/index.html";
+                location.href = "/lots.html";
             }
             })
         .catch(() => {
@@ -41,4 +42,3 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         
         });  
     }); 
-});

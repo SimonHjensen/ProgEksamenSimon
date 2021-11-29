@@ -1,5 +1,5 @@
 class Lot {
-    constructor(name, tlf, city, category, good, image, price, description) {
+    constructor(name, tlf, city, category, good, price, description) {
         this.name = name;
         this.tlf = tlf;
         this.city = city;
