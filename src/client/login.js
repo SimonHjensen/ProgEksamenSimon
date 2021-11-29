@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
     const user = localStorage.getItem("user")
     if (user) {
         location.href = "/";
     }
 
-    document.getElementById("loginForm").addEventListener("submit", () => {
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
         event.preventDefault();
 
         const email = document.getElementById("email").value
@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
         };
 
         fetch("http://localhost:3000/users/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-        })
-            .then((response) => response.json())
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(user),
+            })
+            .then(response => response.json())
             .then((response) => {
-                if (response) { 
-                    localStorage.setItem("user", JSON.stringify(user)) // Gemmer oplysninger så man forbliver logget ind
+                if (response) {
+                    console.log(response)
+                    localStorage.setItem("user", JSON.stringify(response)) // Gemmer oplysninger så man forbliver logget ind
                     location.href = "/";
-                }
-                else {
+                } else {
                     window.alert("Wrong email or password")
                 }
             })

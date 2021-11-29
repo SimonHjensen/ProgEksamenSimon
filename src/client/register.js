@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) =>{
+document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("submitForm").addEventListener("submit", () => {
         event.preventDefault();
 
@@ -7,25 +7,26 @@ document.addEventListener("DOMContentLoaded", (event) =>{
 
         const user = {
             email: email,
-            password: password
+            password: password,
+            id: Math.floor(Math.random() * 1000000)
         }
 
         fetch("http://localhost:3000/users/create", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-        })
-        .then((response) => response.json())
-        .then((response) => {
-            if (response) {
-                location.href = "/login.html";
-            }
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(user),
             })
-        .catch(() => {
-            window.alert("Der er sgu råd i soklen, noget går galt her.");
-        
-        });  
-    }); 
+            .then((response) => response.json())
+            .then((response) => {
+                if (response) {
+                    location.href = "/login.html";
+                }
+            })
+            .catch(() => {
+                window.alert("Der er sgu råd i soklen, noget går galt her.");
+
+            });
+    });
 });

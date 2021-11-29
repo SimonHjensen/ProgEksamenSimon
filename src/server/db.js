@@ -27,12 +27,11 @@ class DB {
     }
 
     deleteUser(user) {
-        this.users = this.users.filter((x) => x.email != user.email);
+        this.users = this.users.filter((x) => x.id != user.id);
         this.saveFile(USER_FILE, JSON.stringify(this.users));
-      }
-    
+    }
+
 }
 
 
 module.exports = new DB();
-

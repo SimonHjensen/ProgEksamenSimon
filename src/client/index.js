@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
     const user = JSON.parse(localStorage.getItem("user"));
 
+    console.log(user)
+
     fetch("http://localhost:3000/users/delete", {
         method: "DELETE",
         headers: {
