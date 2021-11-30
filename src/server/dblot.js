@@ -27,7 +27,7 @@ class DB {
     }
 
     deleteLot(lot) {
-        this.lots = this.lots.filter((x) => x.good != lot.good);
+        this.lots = this.lots.filter((x) => x.id != lot.id);
         this.saveFile(LOT_FILE, JSON.stringify(this.lots));
       }
     

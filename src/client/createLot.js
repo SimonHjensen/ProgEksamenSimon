@@ -22,6 +22,8 @@
             //image: image,
             price: price,
             description: description,
+            id: Math.floor(Math.random() * 1000000)
+
         }
         
         fetch("http://localhost:3000/lots/create", {
