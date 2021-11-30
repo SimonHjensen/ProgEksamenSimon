@@ -18,7 +18,7 @@ document.getElementById("showLot").addEventListener("click", async () => {
         <th> Vare </th>
         <th> Pris </th>
         <th> Beskrivelse </th>
-        <th> </th>
+        
 
     </tr>
     `;
@@ -37,6 +37,11 @@ document.getElementById("showLot").addEventListener("click", async () => {
             <td> ${result[i].good}</td>
             <td> ${result[i].price}</td>
             <td> ${result[i].description}</td>
+            <td> <a href="http://localhost:3000/index.html">
+        <button>Opdater vare</button> </td>
+        <td> <a href="http://localhost:3000/index.html">
+        <button>Slet vare</button> </td>
+        
         </tr>
         `;
         
