@@ -1,3 +1,4 @@
+const { application } = require("express");
 const express = require("express");
 const router = express.Router();
 const userModel = require("../server/models/user")
@@ -9,6 +10,7 @@ router.post("/create", (req, res) => {
     db.saveUser(user);
     res.status(200).send(true);
 });
+
 
 router.delete("/delete", (req, res) => {
     const user = new userModel(req.body.email, req.body.password, req.body.id);

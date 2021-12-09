@@ -17,7 +17,7 @@ class DB {
         return JSON.parse(file);
     }
 
-    saveUser(user) { // Login
+    saveUser(user) { // Bruger saveFile funktionen til at pushe den oprettede bruger ind i databasen
         this.users.push(user);
         this.saveFile(USER_FILE, JSON.stringify(this.users));
     }

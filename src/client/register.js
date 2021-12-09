@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 }
             })
             .catch(() => {
-                window.alert("Der er sgu råd i soklen, noget går galt her.");
+                window.alert("Der er råd i soklen, noget går galt her.");
 
             });
     });

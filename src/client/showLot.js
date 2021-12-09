@@ -1,4 +1,4 @@
-document.getElementById("showLot").addEventListener("click", async () => {
+document.getElementById("showLot").addEventListener("click", async (e) => {
 
     let table = document.getElementById("lotList");
 
@@ -7,7 +7,6 @@ document.getElementById("showLot").addEventListener("click", async () => {
         .catch(error => console.log(error));
 
     
-
 
     let tableHtml = `
      <tr> 
@@ -18,6 +17,7 @@ document.getElementById("showLot").addEventListener("click", async () => {
         <th> Vare </th>
         <th> Pris </th>
         <th> Beskrivelse </th>
+        <th> Billede </th>
         
 
     </tr>
@@ -37,9 +37,10 @@ document.getElementById("showLot").addEventListener("click", async () => {
             <td> ${result[i].good}</td>
             <td> ${result[i].price}</td>
             <td> ${result[i].description}</td>
-            <td> <a href="http://localhost:3000/index.html">
+            <td> <img src="${result[i].image}" width="100" height="100"> </td>
+            <td> <a href="http://localhost:3000/updateLot.html?id=${result[i].id}">
         <button>Opdater vare</button> </td>
-        <td> <a href="http://localhost:3000/index.html">
+        <td> <a href="http://localhost:3000/deleteLot.html?=id${result[i].id}">
         <button>Slet vare</button> </td>
         
         </tr>

@@ -3,35 +3,12 @@
 
         event.preventDefault();
 
-        const name = document.getElementById("name").value
-        const tlf = document.getElementById("tlf").value
-        const city = document.getElementById("city").value
-        const category = document.getElementById("category").value
-        const good = document.getElementById("good").value
-        // const image = document.getElementById("image").value
-        const price = document.getElementById("price").value
-        const description = document.getElementById("description").value
-
-
-        const lot = {
-            name: name,
-            tlf: tlf,
-            city: city,
-            category: category,
-            good: good,
-            //image: image,
-            price: price,
-            description: description,
-            id: Math.floor(Math.random() * 1000000)
-
-        }
-        
+        const formData = new FormData(document.getElementById('createLot'));
+        formData.append("id", Math.floor(Math.random() * 1000000));
+       
         fetch("http://localhost:3000/lots/create", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(lot),
+            body: formData
         })
         .then((response) => response.json())
         .then((response) => {
